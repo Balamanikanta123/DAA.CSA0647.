@@ -1,0 +1,34 @@
+#include <stdio.h>
+#define N 10 
+int board[N][N];
+void initializeBoard(int n) 
+{
+    for (int i = 0; i < n; i++) 
+	{
+        for (int j = 0; j < n; j++)
+		 {
+            board[i][j] = 0;
+        }
+    }
+}
+void printBoard(int n) 
+{
+    for (int i = 0; i < n; i++) 
+	{
+        for (int j = 0; j < n; j++) 
+		{
+            printf("%c ", board[i][j] ? 'Q' : '.');
+        }
+        printf("\n");
+    }
+    printf("\n");
+}
+int isSafe(int row, int col, int n) 
+{
+    for (int i = 0; i < col; i++) 
+	{
+        if (board[row][i]) 
+		{
+            return 0;
+        }
+    }
